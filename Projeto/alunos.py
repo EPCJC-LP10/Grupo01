@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Módulo para gestão de alunos
+# Programa feito por Manel e Zé
 
 from collections import namedtuple
 
