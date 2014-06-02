@@ -1,16 +1,16 @@
-# -*- coding: utf-8 -*-
+# -*- coding: iso8859-1 -*-
 
 def principal():
     print
     print " **** MENU ****** "
     print
-    print "   1. Gest√£o de Alunos"
-    print "   2. Registar Presen√ßa (n√£o implementado)"
+    print "   1. Gest„o de Alunos"
+    print "   2. Registar PresenÁa (n„o implementado)"
     print 
     print "   0. Sair"
     print 
 
-    op = raw_input("Op√ß√£o: ")
+    op = raw_input("OpÁ„o: ")
     return op
 
 
@@ -26,11 +26,11 @@ def alunos():
     print 
     print "0. Menu Anterior"
 
-    op = raw_input("Op√ß√£o: ")
+    op = raw_input("OpÁ„o: ")
     return op
 
 
 
 if __name__ == "__main__":
-    print "Este programa n√£o deve ser executado diretamente"
+    print "Este programa n„o deve ser executado diretamente"
 
