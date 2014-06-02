@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+# Módulo para gestão de alunos
+
 from collections import namedtuple
 
 import menu
