@@ -7,22 +7,23 @@ from collections import namedtuple
 import menu
 
 
-alunoReg = namedtuple("alunoReg", "id, nome")
-listaAlunos = []
+
+eventoReg = namedtuple("EventoReg", "id, nome, tipo, hhii, hhff, custo")
+ListaEventos = []
 
 
 
 def encontrar_posicao(codigo):
     pos = -1
-    for i in range (len(listaAlunos)):
-        if listaAlunos[i].id == codigo:
+    for i in range (len(ListaEventos)):
+        if ListaEventos[i].id == codigo:
             pos = i
             break
                             
     return pos
 
 
-def inserir_aluno():
+def inserir_evento():
     cod = input("Qual o codigo? ")
 
     pos = encontrar_posicao(cod)
@@ -33,12 +34,16 @@ def inserir_aluno():
 
     #ler dados
     nome = raw_input("Qual o nome? ")
+    tipo = raw_input("Qual o tipo de evento?")
+    hhii= raw_input ("Qual a hora de inicio?")
+    hhff= raw_input ("Qual a hora de fim?")
+    custo= raw_input ("Qual o custo final?")
     
-    registo = alunoReg(cod, nome)
-    listaAlunos.append(registo)
+    registo = eventoReg(cod, nome,tipo,hhii,hhff,custo)
+    ListaEventos.append(registo)
 
 
-def pesquisar_aluno():
+def pesquisar_evento():
     cod = input("Qual o codigo do aluno a pesquisar? ")
 
     pos = encontrar_posicao(cod)
@@ -47,15 +52,16 @@ def pesquisar_aluno():
         print "Não existe aluno com esse código"
         return
 
-    print "Código: ", listaAlunos[pos].id
-    print "Nome: ", listaAlunos[pos].nome
+    print "Código: ", ListaEventos[pos].id
+    print "Nome: ", ListaEventos[pos].nome
+    print "tipo de evento", ListaEventos[pos].tipo
     
 
 
 def listar_alunos():
-    for i in range (len(listaAlunos)):
-        print "Código: ", listaAlunos[i].id
-        print "Nome: ", listaAlunos[i].nome
+    for i in range (len(ListaEventos)):
+        print "Código: ", ListaEventos[i].id
+        print "Nome: ", ListaEventos[i].nome
         
   
 
@@ -68,7 +74,7 @@ def eliminar_aluno():
         return
 
     # TODO: Confirmar eliminação
-    listaAlunos.pop(pos)
+    ListaEventos.pop(pos)
 
 
     
@@ -82,7 +88,7 @@ def alterar_aluno():
 
     # só altera o nome
     novonome = raw_input("Qual o nome? ")
-    listaAlunos[pos] = listaAlunos[pos]._replace(nome=novonome)
+    ListaEventos[pos] = ListaEventos[pos]._replace(nome=novonome)
 
 
 

@@ -4,8 +4,8 @@ def principal():
     print
     print " **** MENU ****** "
     print
-    print "   1. Gestão de Alunos"
-    print "   2. Registar Presença (não implementado)"
+    print "   1. Gestão de Eventos"
+    print "   2. "
     print 
     print "   0. Sair"
     print 
@@ -16,7 +16,7 @@ def principal():
 
 def alunos():
     print
-    print " *** Menu Alunos **** "
+    print " *** Menu Eventos **** "
     print
     print "1. Inserir novo aluno"
     print "2. Listar todos alunos"

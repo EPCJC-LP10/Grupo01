@@ -1,21 +1,21 @@
-# -*- coding: utf-8 -*-
+# -*- coding: iso8859-1 -*-
 
 import menu
-import alunos
+import eventos
 import util
 
 
 # nome dos ficheiros
-fxAlunos = "fxAlunos.dat"
+fxEventos = "fxEventos.dat"
 
 def ler_ficheiros():
 	# adicionar todos ficheiros a ler
-	alunos.listaAlunos = util.ler_ficheiro(fxAlunos)
+	eventos.listaeventos = util.ler_ficheiro(fxEventos)
 
 
 def escrever_ficheiros():
 	# adicionar todos ficheiros a guardar
-	util.escrever_ficheiro(fxAlunos, alunos.listaAlunos)
+	util.escrever_ficheiro(fxEventos, eventos.listaeventos)
 
 
 
@@ -28,7 +28,7 @@ while not terminar:
     op = menu.principal()
     
     if op == '1':
-        alunos.gerir()
+        eventos.gerir()
     elif op == '2':
         pass    #por fazer
     elif op == '0':
