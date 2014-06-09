@@ -5,7 +5,7 @@ def principal():
     print " **** MENU ****** "
     print
     print "   1. Gestão de Eventos"
-    print "   2. "
+    print "   2. Gestão de noites "
     print 
     print "   0. Sair"
     print 
@@ -14,15 +14,31 @@ def principal():
     return op
 
 
-def alunos():
+def eventos():
     print
     print " *** Menu Eventos **** "
     print
-    print "1. Inserir novo aluno"
-    print "2. Listar todos alunos"
-    print "3. Pesquisar aluno"
-    print "4. Alterar dados de um aluno"
-    print "5. Eliminar aluno"
+    print "1. Inserir novo eventos"
+    print "2. Listar todos eventos"
+    print "3. Pesquisar eventos"
+    print "4. Alterar dados de um evento"
+    print "5. Eliminar evento"
+    print 
+    print "0. Menu Anterior"
+
+    op = raw_input("Opção: ")
+    return op
+
+
+def noite():
+    print
+    print " *** Menu Noite **** "
+    print
+    print "1. Inserir nova noite"
+    print "2. Listar todas as noites"
+    print "3. Pesquisar noites"
+    print "4. Alterar dados de uma noite"
+    print "5. Eliminar noite"
     print 
     print "0. Menu Anterior"
 

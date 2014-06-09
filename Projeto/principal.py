@@ -9,13 +9,13 @@ import util
 fxEventos = "fxEventos.dat"
 
 def ler_ficheiros():
-	# adicionar todos ficheiros a ler
-	eventos.listaeventos = util.ler_ficheiro(fxEventos)
+    # adicionar todos ficheiros a ler
+    eventos.Listaeventos = util.ler_ficheiro(fxEventos)
 
 
 def escrever_ficheiros():
-	# adicionar todos ficheiros a guardar
-	util.escrever_ficheiro(fxEventos, eventos.listaeventos)
+    # adicionar todos ficheiros a guardar
+    util.escrever_ficheiro(fxEventos, eventos.Listaeventos)
 
 
 

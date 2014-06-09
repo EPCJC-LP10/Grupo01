@@ -44,33 +44,37 @@ def inserir_evento():
 
 
 def pesquisar_evento():
-    cod = input("Qual o codigo do aluno a pesquisar? ")
+    cod = input("Qual o codigo do evento a pesquisar? ")
 
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "Não existe aluno com esse código"
+        print "Não existe evento com esse código"
         return
 
     print "Código: ", ListaEventos[pos].id
     print "Nome: ", ListaEventos[pos].nome
     print "tipo de evento", ListaEventos[pos].tipo
-    
-
-
-def listar_alunos():
+    print "hora de inicio", ListaEventos[pos].hhii
+    print "hora do fim", ListaEventos[pos].hhff
+    print "custo do evento", ListaEventos[pos].custo
+def listar_evento():
     for i in range (len(ListaEventos)):
         print "Código: ", ListaEventos[i].id
         print "Nome: ", ListaEventos[i].nome
+        print "tipo de evento", ListaEventos[i].tipo
+        print "hora de inicio", ListaEventos[i].hhii
+        print "hora de fim", ListaEventos[i].hhff
+        print "custo de evento", ListaEventos[i].custo
         
   
 
-def eliminar_aluno():
-    cod = input ("Código do aluno a eliminar --> ")
+def eliminar_evento():
+    cod = input ("Código do evento a eliminar --> ")
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "Não existe aluno com esse código"
+        print "Não existe evento com esse código"
         return
 
     # TODO: Confirmar eliminação
@@ -78,12 +82,12 @@ def eliminar_aluno():
 
 
     
-def alterar_aluno():
-    cod = input ("Código do aluno a alterar --> ")
+def alterar_evento():
+    cod = input ("Código do evento a alterar --> ")
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "Não existe aluno com esse código"
+        print "Não existe evento com esse código"
         return
 
     # só altera o nome
@@ -99,18 +103,18 @@ def gerir():
     terminar = False
 
     while not terminar:
-        op = menu.alunos()
+        op = menu.evento()
 
         if op == '1':
-            inserir_aluno()
+            inserir_evento()
         elif op =='2':
-            listar_alunos()
+            listar_evento()
         elif op == '3':
-            pesquisar_aluno()
+            pesquisar_evento()
         elif op == '4':
-            alterar_aluno()
+            alterar_evento()
         elif op == '5':
-            eliminar_aluno()
+            eliminar_evento()
         elif op == '0':
             terminar = True
 
@@ -118,7 +122,7 @@ def gerir():
 
 
 if __name__ == "__main__":
-    print "Este programa não deve ser executado diretamente"
+    print "Este programa não deve ser executado diretamente3aa"
 
 
 
