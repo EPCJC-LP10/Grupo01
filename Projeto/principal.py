@@ -3,6 +3,7 @@
 import menu
 import eventos
 import util
+import noites
 
 
 # nome dos ficheiros
@@ -30,7 +31,7 @@ while not terminar:
     if op == '1':
         eventos.gerir()
     elif op == '2':
-        pass    #por fazer
+        noites.gerir()
     elif op == '0':
         terminar = True
 
