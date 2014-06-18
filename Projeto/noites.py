@@ -10,7 +10,7 @@ from collections import namedtuple
 import menu
 
 
-noiteReg = namedtuple("noiteReg", "id, Data, numero de entradas,clientes registados, faturacao, totalMaterias, totalFuncionarios")
+noiteReg = namedtuple("noiteReg", "id, Data, entradas, faturacao, totalMateriais, totalFuncionarios")
 dataReg = namedtuple("dataReg", "dia, mes, ano")
 Listanoite = []
 
@@ -41,12 +41,11 @@ def inserir_noite():
     mes = input("\tMês:")
     ano = input("\tAno:")
     data = dataReg(dia, mes, ano)
-    numeroentradas = raw_input("Qual o numero de entradas?")
-    clientesregistados= raw_input ("Quais os clientes registados?")
+    numeroentradas = raw_input("Qual o numero de entradas?")    
     faturacao= raw_input ("Qual a faturaçao?")
-    totalgastomaterial= raw_input ("Qual o gasto do material?")
-    totalgastofuncionarios= raw_input("qual o gasto em funcionarios")
-    registo = noiteReg(cod, data,numeroentradas,clientesregistados,faturacao,totalgastomaterial,totalgastofuncionarios)
+    totalMateriais= raw_input ("Qual o gasto do material?")
+    totalFuncionarios= raw_input("qual o gasto em funcionarios")
+    registo = noiteReg(cod, data,numeroentradas,faturacao,totalMateriais,totalFuncionarios)
     Listanoite.append(registo)
 
 
@@ -61,26 +60,28 @@ def pesquisar_noite():
 
     print "Código: ", Listanoite[pos].id
     print "Data: ", 
-    print Listanoite[pos].data.dia, "/", Listanoite[pos].data.mes, "/",
-    print Listanoite[pos].data.ano
-    print "numero de entradas", Listanoite[pos].numeroentradas
-    print "clientes registados", Listanoite[pos].clientesregistados
+    print Listanoite[pos].Data.dia, "/", Listanoite[pos].Data.mes, "/",
+    print Listanoite[pos].Data.ano
+    print "numero de entradas", Listanoite[pos].entradas
     print "faturação", Listanoite[pos].faturacao
-    print "total gasto em material", Listanoite[pos].totalgastomaterial
-    print "total gasto em funcionarios", Listanoite[pos].totalgastofuncionarios
+    print "total gasto em material", Listanoite[pos].totalMateriais
+    print "total gasto em funcionarios", Listanoite[pos].totalFuncionarios
     
 def listar_noite():
+    if len(Listanoite) == 0:
+        print "Não existem noites inseridas"
+        return
+        
     for i in range (len(Listanoite)):
         print "="*50
         print "Código: ", Listanoite[i].id
         print "Data: ", 
-        print Listanoite[i].data.dia, "/", Listanoite[i].data.mes, "/",
-        print Listanoite[i].data.ano
-        print "Número de entradas", Listanoite[i].numeroentradas
-        print "Hora inicio: ", Listanoite[i].clientesregistados
-        print "hora de fim", Listanoite[i].faturacao
-        print "custo de noite", Listanoite[i].totalgastomaterial
-        print "custo de noite", Listanoite[i].totalgastofuncionarios
+        print Listanoite[i].Data.dia, "/", Listanoite[i].Data.mes, "/",
+        print Listanoite[i].Data.ano
+        print "Número de entradas", Listanoite[i].entradas
+        print "faturacao", Listanoite[i].faturacao
+        print "totalgastomaterial", Listanoite[i].totalMateriais
+        print "totalgastofuncionarios", Listanoite[i].totalFuncionarios
   
 
 def eliminar_noite():
@@ -104,9 +105,9 @@ def alterar_noite():
         print "Não existe noite com esse código"
         return
 
-    # só altera o nome
-    novadata = raw_input("Qual a data? ")
-    Listanoite[pos] = Listanoite[pos]._replace(nome=novadata)
+    # alterar numero de entradas
+    nova_entradas = raw_input("Qual o número correto de entradas ")
+    Listanoite[pos] = Listanoite[pos]._replace(entradas=nova_entradas)
 
 
 
