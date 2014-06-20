@@ -19,12 +19,11 @@ def ler_ficheiros():
 def escrever_ficheiros():
     # adicionar todos ficheiros a guardar
     util.escrever_ficheiro(fxEventos, eventos.Listaeventos)
-    util.escrever_ficheiro(fxNoites, eventos.Listanoite)
+    util.escrever_ficheiro(fxNoites, noites.Listanoite)
 
 
 
 # Bloco Principal
-
 ler_ficheiros()
 
 terminar = False

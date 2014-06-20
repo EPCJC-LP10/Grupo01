@@ -103,7 +103,7 @@ def gerir():
     terminar = False
 
     while not terminar:
-        op = menu.evento()
+        op = menu.eventos()
 
         if op == '1':
             inserir_evento()
